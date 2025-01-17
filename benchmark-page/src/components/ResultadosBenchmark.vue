@@ -21,19 +21,32 @@ import { defineProps } from 'vue';
 
 <template>
   <div id="contenedor-tarjeta">
-    <h2>Prueba Número: {{ peticion["Orden Peticion"] }}</h2>
-    <h3>Tiempo tomado: {{ peticion["Time taken for tests"] }}</h3>
-    <h3>Solicitudes Completadas: {{ peticion["Complete requests"] }}</h3>
-    <h3>Solicitudes fallidas: {{ peticion["Failed requests"] }}</h3>
-    <h3>Total transferido: {{ peticion["Total transferred"] }}</h3>
-    <h3>HTML transferido: {{ peticion["HTML transferred"] }}</h3>
-    <h3>Peticiones atendidas por segundo: {{ peticion["Requests per second"] }}</h3>
-    <h3>Tiempo por peticion individual: {{ peticion["Time per request"] }}</h3>
-    <h3>Kbytes recibidos por segundo: {{ peticion["Transfer rate"] }}</h3>
+    <h2><span class="texto-bold">Prueba Número: </span> {{ peticion["Orden Peticion"] }}</h2>
+    <h3><span class="texto-bold">Tiempo tomado: </span> {{ peticion["Time taken for tests"] }}</h3>
+    <h3><span class="texto-bold">Solicitudes Completadas: </span> {{ peticion["Complete requests"] }}</h3>
+    <h3><span class="texto-bold">Solicitudes fallidas: </span> {{ peticion["Failed requests"] }}</h3>
+    <h3><span class="texto-bold">Total transferido: </span> {{ peticion["Total transferred"] }}</h3>
+    <h3><span class="texto-bold">HTML transferido: </span> {{ peticion["HTML transferred"] }}</h3>
+    <h3><span class="texto-bold">Peticiones atendidas por segundo:</span> {{ peticion["Requests per second"] }}</h3>
+    <h3><span class="texto-bold">Tiempo por peticion individual:</span> {{ peticion["Time per request"] }}</h3>
+    <h3><span class="texto-bold">Kbytes recibidos por segundo:</span> {{ peticion["Transfer rate"] }}</h3>
 
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="sass">
+
+  h2
+    letter-spacing: 2px
+    font-size: 25px
+    margin-bottom: 20px
+
+  .texto-bold
+    font-weight: 800
+    color: rgba(0, 0, 0, 0.5)
+
+  h3
+    font-weight: 800
+
 
 </style>

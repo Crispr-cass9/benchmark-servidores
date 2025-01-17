@@ -82,8 +82,15 @@ import type { benchmark_data } from './interface';
     
   </div>
 
-  <div id="seccion-links-acortados" v-for="(resultado, index) in peticiones" :key = 'index'>
-    <ResultadosBenchmark :peticion="resultado"></ResultadosBenchmark>
+  <div id="seccion-links-acortados" >
+
+    <div id="todos-los-resultados">
+      <div class="contenedor-resultado" v-for="(resultado, index) in peticiones" :key = 'index'>
+  
+        <ResultadosBenchmark id="resultados" :peticion="resultado"></ResultadosBenchmark>
+        
+      </div>
+    </div>
   </div>
 
   <div id="seccion-estadisticas-avanzadas">
@@ -115,10 +122,9 @@ import type { benchmark_data } from './interface';
         <img class="icono-tarjeta" src="./img/icon-detailed-records.svg" alt="">
       </div>
     
-      <h3 class="titulo-tarjeta">Detailed Records</h3>
+      <h3 class="titulo-tarjeta">Datos detallados</h3>
       
-      <p>Gain insights into who is clicking your links. Knowing when and where 
-        people engage with your content helps inform better decisions.
+      <p>Cada uno de los datos que da como resultado el benchmark será mostrado en la interface de usuario para que puedas revisar minusiosamente el comportamiento de tu servidor
       </p>
     
     </div>
@@ -129,10 +135,10 @@ import type { benchmark_data } from './interface';
         <img class="icono-tarjeta" src="./img/icon-fully-customizable.svg" alt="">
       </div>
     
-      <h3 class="titulo-tarjeta">Fully Customizable</h3>
+      <h3 class="titulo-tarjeta">Compara servidores</h3>
       
       <p>
-        Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.
+        Puedes comparar servidores automáticamente presionando el boton comparar (Proximamente)
       </p>
     
     </div>
@@ -141,38 +147,37 @@ import type { benchmark_data } from './interface';
 
   <div id="seccion-boost">
 
-    <h2>Boost your links today</h2>
-    <button>Get Started</button>
+    <h2>Haz tu benchmark hoy</h2>
+    <button>Comenzar -></button>
 
   </div>
 
   <footer>
-    <h2>Shortly</h2>
+    <h2>Benchmark</h2>
 
     <div id="contenedor-nav-footer-redes">
 
       <nav>
 
         <div class="submenu">
-          <h4>Features</h4>
-          <a href="#">Link shortening</a>
-          <a href="#">Branded Links</a>
-          <a href="#">Analytics</a>
+          <h4>Características</h4>
+          <a href="#">Server benchmark</a>
+          <a href="#">comparacion de servidores</a>
+          <a href="#">Analiticas</a>
         </div>
 
         <div class="submenu">
-          <h4>Resources</h4>
+          <h4>Recursos</h4>
           <a href="#">Blog</a>
           <a href="#">Developers</a>
-          <a href="#">Support</a>
+          <a href="#">Soporte</a>
         </div>
 
         <div class='submenu'>
-          <h4>Company</h4>
-          <a href="#">About</a>
-          <a href="#">Our Team</a>
-          <a href="#">Careers</a>
-          <a href="#">Contact</a>
+          <h4>Compañia</h4>
+          <a href="#">Sobre nosotros</a>
+          <a href="#">Nuestro equipo</a>
+          <a href="#">Contacto</a>
         </div>
       </nav>
 
@@ -408,6 +413,7 @@ header
     width: 100%
     padding: 0 $espacio-lateral
     height: fit-content
+    margin-top: 50px
 
     .contenedor-link-acortado
         width: 100%
@@ -606,10 +612,20 @@ footer
 
         &:hover path
             fill: $Cyan
-            
-    
+
+#todos-los-resultados
+  display: flex
+  flex-flow: row wrap
+  gap: 20px
+.contenedor-resultado
+  width: 48%
+  padding: 30px
+  border-radius: 20px
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2)
     
 .attribution
     display: none
+
+
         
 </style>
